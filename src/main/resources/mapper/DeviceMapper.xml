@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.DeviceMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.demo.domain.Device">
+        <id column="device_id" property="deviceId" />
+        <result column="device_group_id" property="deviceGroupId" />
+        <result column="parent_device_id" property="parentDeviceId" />
+        <result column="device_name" property="deviceName" />
+        <result column="product_name" property="productName" />
+        <result column="enable" property="enable" />
+        <result column="register_datetime" property="registerDatetime" />
+        <result column="activate_datetime" property="activateDatetime" />
+        <result column="sw_version" property="swVersion" />
+        <result column="hw_version" property="hwVersion" />
+        <result column="province_code" property="provinceCode" />
+        <result column="city_code" property="cityCode" />
+        <result column="county_code" property="countyCode" />
+        <result column="town_code" property="townCode" />
+        <result column="village_code" property="villageCode" />
+        <result column="project_id" property="projectId" />
+        <result column="building_id" property="buildingId" />
+        <result column="floor_id" property="floorId" />
+        <result column="unit_code" property="unitCode" />
+        <result column="xpos" property="xpos" />
+        <result column="ypos" property="ypos" />
+        <result column="place" property="place" />
+        <result column="longitude" property="longitude" />
+        <result column="latitude" property="latitude" />
+        <result column="is_delete" property="isDelete" />
+        <result column="create_user_id" property="createUserId" />
+        <result column="gmt_create" property="gmtCreate" />
+        <result column="gmt_modified" property="gmtModified" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        device_id, device_group_id, parent_device_id, device_name, product_name, enable, register_datetime, activate_datetime, sw_version, hw_version, province_code, city_code, county_code, town_code, village_code, project_id, building_id, floor_id, unit_code, xpos, ypos, place, longitude, latitude, is_delete, create_user_id, gmt_create, gmt_modified
+    </sql>
+
+    <select id="queryAll" resultType="com.example.demo.domain.es.DeviceEs">
+        select * from device
+    </select>
+
+</mapper>

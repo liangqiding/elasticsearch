@@ -1,0 +1,16 @@
+version: '3'
+services:
+  # 指定服务名称
+  my_elasticsearch:
+    # 指定服务使用的镜像
+    image: my_elasticsearch
+    # 指定容器名称
+    container_name: my_elasticsearch
+    # 指定服务运行的端口
+    ports:
+      - 39000:39000
+    restart: always
+    environment:
+      TZ: Asia/Shanghai
+    volumes:
+      - /etc/localtime:/etc/localtime
